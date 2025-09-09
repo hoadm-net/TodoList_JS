@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList App - Ứng dụng quản lý công việc</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📝 TodoList App</h1>
+            <p>Quản lý công việc hàng ngày của bạn</p>
+        </header>
+
+        <main class="main">
+            <!-- Form thêm công việc mới -->
+            <section class="add-todo-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        placeholder="Nhập công việc cần làm..."
+                        maxlength="100"
+                    >
+                    <button id="addBtn" onclick="addTodo()">
+                        ➕ Thêm
+                    </button>
+                </div>
+            </section>
+
+            <!-- Bộ lọc và thống kê -->
+            <section class="filter-section">
+                <div class="stats">
+                    <span id="totalCount">Tổng: 0</span>
+                    <span id="pendingCount">Chưa hoàn thành: 0</span>
+                    <span id="completedCount">Đã hoàn thành: 0</span>
+                </div>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterTodos('all')">
+                        Tất cả
+                    </button>
+                    <button class="filter-btn" onclick="filterTodos('pending')">
+                        Chưa xong
+                    </button>
+                    <button class="filter-btn" onclick="filterTodos('completed')">
+                        Đã xong
+                    </button>
+                </div>
+            </section>
+
+            <!-- Danh sách công việc -->
+            <section class="todo-list-section">
+                <ul id="todoList" class="todo-list">
+                    <!-- Danh sách công việc sẽ được render bằng JavaScript -->
+                </ul>
+                
+                <!-- Thông báo khi không có công việc -->
+                <div id="emptyState" class="empty-state">
+                    <p>🎉 Chưa có công việc nào!</p>
+                    <p>Hãy thêm công việc đầu tiên của bạn.</p>
+                </div>
+            </section>
+
+            <!-- Nút xóa tất cả -->
+            <section class="actions-section">
+                <button id="clearAllBtn" onclick="clearAllTodos()" class="danger-btn">
+                    🗑️ Xóa tất cả
+                </button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Import JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

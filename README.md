@@ -10,7 +10,6 @@ Xây dựng một ứng dụng quản lý công việc (TodoList) đơn giản s
 - ✅ **Không** sử dụng framework/library bên ngoài  
 - ✅ CSS và JS phải là **external files**
 - ✅ Áp dụng **Functional Programming** paradigm
-- ✅ Code function/biến bằng **tiếng Anh**, comment bằng **tiếng Việt**
 
 ## 📋 Chức năng cần có
 

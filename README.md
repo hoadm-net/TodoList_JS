@@ -1,131 +1,96 @@
-# TodoList App - Ứng dụng quản lý công việc
+# Bài tập: Xây dựng ứng dụng TodoList
 
-Đây là một ứng dụng TodoList đơn giản được xây dựng bằng HTML, CSS và JavaScript thuần túy, phù hợp cho việc học tập và demo.
+## 📝 Đề bài
 
-## 🎯 Mục tiêu
+Xây dựng một ứng dụng quản lý công việc (TodoList) đơn giản sử dụng HTML, CSS và JavaScript thuần túy.
 
-Ứng dụng này được tạo ra để demo cho khóa học JavaScript cơ bản với các yêu cầu:
+## 🎯 Yêu cầu kỹ thuật
 
-- ✅ Sử dụng HTML, CSS và JavaScript thuần túy
-- ✅ External CSS và JS files  
-- ✅ Xây dựng ứng dụng TodoList hoàn chình
-- ✅ Sử dụng lập trình hàm (Functional Programming)
-- ✅ Code bằng tiếng Anh, comment bằng tiếng Việt
+- ✅ Sử dụng **HTML5, CSS3, JavaScript ES6+** thuần túy
+- ✅ **Không** sử dụng framework/library bên ngoài  
+- ✅ CSS và JS phải là **external files**
+- ✅ Áp dụng **Functional Programming** paradigm
+- ✅ Code function/biến bằng **tiếng Anh**, comment bằng **tiếng Việt**
 
-## 🚀 Tính năng
+## 📋 Chức năng cần có
 
 ### Chức năng cơ bản
-- ➕ **Thêm công việc mới**: Nhập và thêm công việc vào danh sách
-- ✅ **Đánh dấu hoàn thành**: Click checkbox để đánh dấu công việc đã xong
-- 🗑️ **Xóa công việc**: Xóa từng công việc hoặc xóa tất cả
-- 💾 **Lưu trữ tự động**: Dữ liệu được lưu trong localStorage
+1. **Thêm công việc**: Nhập tên công việc và thêm vào danh sách
+2. **Hiển thị danh sách**: Hiển thị tất cả công việc đã thêm
+3. **Đánh dấu hoàn thành**: Click để đánh dấu công việc đã xong/chưa xong
+4. **Xóa công việc**: Xóa từng công việc hoặc xóa tất cả
+5. **Lưu trữ**: Dữ liệu được lưu và khôi phục khi reload trang
 
 ### Chức năng nâng cao
-- 🔍 **Bộ lọc**: Xem tất cả, chỉ công việc chưa xong, hoặc đã hoàn thành
-- 📊 **Thống kê**: Hiển thị số lượng công việc theo từng trạng thái
-- 📱 **Responsive**: Giao diện thích ứng với mọi thiết bị
-- ⌨️ **Phím tắt**: Nhấn Enter để thêm công việc nhanh
+6. **Lọc hiển thị**: Xem theo trạng thái (tất cả/chưa xong/đã xong)
+7. **Thống kê**: Hiển thị số lượng công việc theo trạng thái
+8. **Validation**: Kiểm tra input hợp lệ trước khi thêm
+9. **Responsive**: Giao diện hoạt động tốt trên mobile
+10. **UX/UI**: Giao diện đẹp với animations và feedback
 
-## 📁 Cấu trúc dự án
+## 🔧 Quy tắc nghiệp vụ
+
+- Công việc **không được rỗng** và **tối đa 100 ký tự**
+- Mỗi công việc có **ID duy nhất** và **thời gian tạo**
+- Dữ liệu lưu trong **localStorage** của trình duyệt
+- **Xác nhận** trước khi xóa công việc
+- Hiển thị **thông báo lỗi** khi có vấn đề
+
+## 🏗️ Cấu trúc dữ liệu
+
+Mỗi công việc (todo) cần có các thông tin:
+- **id**: Mã định danh duy nhất  
+- **text**: Nội dung công việc
+- **completed**: Trạng thái hoàn thành (true/false)
+- **createdAt**: Thời gian tạo
+
+## 📁 Cấu trúc files
 
 ```
 TodoList_JS/
-├── index.html      # File HTML chính
-├── styles.css      # File CSS cho giao diện
-├── script.js       # File JavaScript xử lý logic
-└── README.md       # File hướng dẫn này
+├── index.html      # Giao diện HTML
+├── styles.css      # Styling CSS  
+├── script.js       # Logic JavaScript
+└── README.md       # Tài liệu hướng dẫn
 ```
 
-## 🛠️ Cách sử dụng
+## 🎓 Kiến thức cần áp dụng
 
-### Chạy ứng dụng
-1. Mở file `index.html` bằng trình duyệt web
-2. Hoặc sử dụng Live Server extension trong VS Code
+### HTML
+- Semantic HTML5 (header, main, section)
+- Form elements (input, button)
+- Lists (ul, li) cho hiển thị todos
 
-### Hướng dẫn sử dụng
-1. **Thêm công việc**: Nhập nội dung vào ô input và click "Thêm" hoặc nhấn Enter
-2. **Đánh dấu hoàn thành**: Click vào checkbox bên trái mỗi công việc
-3. **Lọc công việc**: Sử dụng các nút "Tất cả", "Chưa xong", "Đã xong"
-4. **Xóa công việc**: Click nút 🗑️ để xóa từng công việc
-5. **Xóa tất cả**: Click "Xóa tất cả" để xóa toàn bộ danh sách
+### CSS  
+- Flexbox/Grid layout
+- Responsive design với media queries
+- CSS animations và transitions
+- Modern CSS properties
 
-## 💻 Kiến thức JavaScript được sử dụng
+### JavaScript
+- **DOM Manipulation**: querySelector, addEventListener
+- **Array Methods**: map(), filter(), find(), forEach()
+- **ES6+ Features**: arrow functions, template literals, destructuring
+- **Local Storage**: setItem(), getItem(), JSON methods
+- **Event Handling**: click, keypress events
+- **Function Programming**: pure functions, immutability
 
-### Lập trình hàm (Functional Programming)
-- **Pure Functions**: Các hàm không có side effects
-- **Array Methods**: `map()`, `filter()`, `find()`, `forEach()`
-- **Immutability**: Không thay đổi trực tiếp dữ liệu gốc
-- **Function Composition**: Tổ hợp các hàm nhỏ thành chức năng lớn
+## 🚀 Gợi ý thực hiện
 
-### Kiến thức cơ bản
-- **DOM Manipulation**: Thao tác với HTML elements
-- **Event Handling**: Xử lý sự kiện click, keypress
-- **Local Storage**: Lưu trữ dữ liệu cục bộ
-- **JSON**: Chuyển đổi dữ liệu JavaScript sang JSON và ngược lại
+### Bước 1: HTML Structure
+Tạo cấu trúc HTML với form input, nút thêm, danh sách todos và các nút lọc.
 
-### Kiến thức nâng cao
-- **ES6+ Features**: Arrow functions, template literals, destructuring
-- **Error Handling**: Try-catch để xử lý lỗi
-- **Input Validation**: Kiểm tra và xác thực dữ liệu đầu vào
+### Bước 2: CSS Styling  
+Thiết kế giao diện đẹp, responsive với animations cho user experience tốt.
 
-## 🎨 Thiết kế giao diện
+### Bước 3: JavaScript Logic
+- Tạo array để lưu todos
+- Viết functions cho CRUD operations
+- Implement localStorage cho data persistence
+- Add event listeners cho user interactions
 
-- **Modern UI**: Giao diện hiện đại với gradient và box-shadow
-- **Responsive Design**: Thích ứng từ desktop đến mobile
-- **Animations**: Hiệu ứng mượt mà khi thêm/xóa công việc
-- **User Experience**: Thông báo và feedback rõ ràng
-
-## 🔧 Tùy chỉnh
-
-### Thay đổi màu sắc
-Chỉnh sửa các biến CSS trong file `styles.css`:
-```css
-/* Màu chính */
---primary-color: #4CAF50;
---primary-hover: #45a049;
-
-/* Màu nguy hiểm */
---danger-color: #ff4757;
---danger-hover: #ff3838;
-```
-
-### Thêm tính năng mới
-Các hàm trong `script.js` được tổ chức theo nguyên tắc lập trình hàm, dễ dàng mở rộng:
-- Thêm trường dữ liệu mới vào object `todo`
-- Tạo hàm xử lý riêng cho tính năng mới
-- Cập nhật hàm `renderTodoList()` để hiển thị
-
-## 📚 Học thêm
-
-Dự án này bao gồm nhiều khái niệm quan trọng:
-
-1. **HTML Semantic**: Sử dụng các thẻ có ý nghĩa
-2. **CSS Flexbox**: Layout linh hoạt
-3. **JavaScript ES6+**: Cú pháp hiện đại
-4. **Web Storage API**: Lưu trữ phía client
-5. **Event-driven Programming**: Lập trình hướng sự kiện
-
-## 🐛 Debug và phát triển
-
-### Console logs
-Ứng dụng có nhiều console.log() để theo dõi:
-```javascript
-// Bật Developer Tools (F12) để xem logs
-console.log('✅ Đã thêm công việc mới:', newTodo.text);
-```
-
-### Kiểm tra dữ liệu
-```javascript
-// Gọi hàm này trong console để xem trạng thái
-logAppState();
-```
-
-## 📄 License
-
-Dự án này được tạo ra cho mục đích giáo dục, bạn có thể tự do sử dụng và chỉnh sửa.
-
----
-
-**Tác giả**: Demo cho khóa học JavaScript cơ bản  
-**Ngày tạo**: Tháng 9, 2025  
-**Phiên bản**: 1.0.0
+### Bước 4: Advanced Features
+- Filter functionality
+- Statistics display  
+- Input validation
+- Error handling
